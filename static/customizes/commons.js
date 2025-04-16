@@ -5,108 +5,108 @@ const inputWarning = '入力情報不正';
 const inputedString = '追加済み';
 const delimiter = '/';
 const delayApology = 'すみませんが、当機能はまだ実装されていません';
-$(document).ready(function() {
-	let treeData = [
-		{
-			text: "聖書奉読",
-			icon: "fa-solid fa-book-bible",
-			expanded: true,
-			nodes: [
-				{
-					id: "toBookSearch",
-					text: "章節選択",
-					icon: "fa-solid fa-anchor"
-				},
-				{
-					id: "toTemporary",
-					text: "章節入力",
-					icon: "fa-solid fa-box-archive"
-				}
-			]
-		},
-		{
-			text: "賛美歌集め",
-			icon: "fa-solid fa-music",
-			expanded: true,
-			nodes: [
-				{
-					id: "toCollection",
-					text: "コレクション一覧",
-					icon: "fa-solid fa-rss"
-				},
-				{
-					id: "toRandomFive",
-					text: "ランダム五つ",
-					icon: "fa-regular fa-copyright"
-				}
-			]
-		}
-	];
-	$('#mainmenuTree').bstreeview({
-		data: treeData,
-		expandIcon: 'fa fa-angle-down fa-fw',
-		collapseIcon: 'fa fa-angle-right fa-fw',
-		indent: 1.5,
-		parentsMarginLeft: '1.25rem',
-		openNodeLinkOnNewTab: true
-	});
-	$("#logoutBtn").on('click', function() {
-		swal.fire({
-			title: '警告',
-			text: 'ログアウトしてよろしいでしょうか。',
-			icon: 'warning',
-			showDenyButton: true,
-			denyButtonText: 'いいえ',
-			confirmButtonText: 'はい',
-			confirmButtonColor: '#7F0020',
-			denyButtonColor: '#002FA7'
-		}).then((result) => {
-			if (result.isConfirmed) {
-				$("#logoutForm").submit();
-			} else if (result.isDenied) {
-				$(this).close();
-			}
-		});
-	});
-	$("#toMainmenu").on('click', function(e) {
-		e.preventDefault();
-		window.location.replace('/category/toMainmenu');
-	});
-	$("#toMainmenu2").on('click', function(e) {
-		e.preventDefault();
-		window.location.replace('/category/toMainmenu');
-	});
-	$("#toPersonal").on('click', function(e) {
-		e.preventDefault();
-		let userId = $(this).find("input").val().replace(/,/g, emptyString);
-		// let authChkFlag = $("#authChkFlgContainer").val();
-		let url = '/students/toEdition?editId=' + userId;
-		checkPermissionAndTransfer(url);
-	});
-	$("#toMessage").on('click', function(e) {
-		e.preventDefault();
-		layer.msg(delayApology);
-	});
-	$("#toBookSearch").on('click', function(e) {
-		e.preventDefault();
-		layer.msg(delayApology);
-		// let url = '/books/toPages?pageNum=1';
-		// checkPermissionAndTransfer(url);
-	});
-	$("#toTemporary").on('click', function(e) {
-		let url = '/books/toAddition';
-		checkPermissionAndTransfer(url);
-	});
-	$("#toCollection").on('click', function(e) {
-		e.preventDefault();
-		let url = '/hymns/toPages?pageNum=1';
-		checkPermissionAndTransfer(url);
-	});
-	$("#toRandomFive").on('click', function(e) {
-		e.preventDefault();
-		let url = '/hymns/toRandomFive';
-		checkPermissionAndTransfer(url);
-	});
+$(document).ready(function () {
+	// let treeData = [
+	// 	{
+	// 		text: "聖書奉読",
+	// 		icon: "fa-solid fa-book-bible",
+	// 		expanded: true,
+	// 		nodes: [
+	// 			{
+	// 				id: "toBookSearch",
+	// 				text: "章節選択",
+	// 				icon: "fa-solid fa-anchor"
+	// 			},
+	// 			{
+	// 				id: "toTemporary",
+	// 				text: "章節入力",
+	// 				icon: "fa-solid fa-box-archive"
+	// 			}
+	// 		]
+	// 	},
+	// 	{
+	// 		text: "賛美歌集め",
+	// 		icon: "fa-solid fa-music",
+	// 		expanded: true,
+	// 		nodes: [
+	// 			{
+	// 				id: "toCollection",
+	// 				text: "コレクション一覧",
+	// 				icon: "fa-solid fa-rss"
+	// 			},
+	// 			{
+	// 				id: "toRandomFive",
+	// 				text: "ランダム五つ",
+	// 				icon: "fa-regular fa-copyright"
+	// 			}
+	// 		]
+	// 	}
+	// ];
+	// $('#mainmenuTree').bstreeview({
+	// 	data: treeData,
+	// 	expandIcon: 'fa fa-angle-down fa-fw',
+	// 	collapseIcon: 'fa fa-angle-right fa-fw',
+	// 	indent: 1.5,
+	// 	parentsMarginLeft: '1.25rem',
+	// 	openNodeLinkOnNewTab: true
+	// });
+	// $("#logoutBtn").on('click', function() {
+	// 	swal.fire({
+	// 		title: '警告',
+	// 		text: 'ログアウトしてよろしいでしょうか。',
+	// 		icon: 'warning',
+	// 		showDenyButton: true,
+	// 		denyButtonText: 'いいえ',
+	// 		confirmButtonText: 'はい',
+	// 		confirmButtonColor: '#7F0020',
+	// 		denyButtonColor: '#002FA7'
+	// 	}).then((result) => {
+	// 		if (result.isConfirmed) {
+	// 			$("#logoutForm").submit();
+	// 		} else if (result.isDenied) {
+	// 			$(this).close();
+	// 		}
+	// 	});
+	// });
+	// $("#toMainmenu").on('click', function(e) {
+	// 	e.preventDefault();
+	// 	window.location.replace('/category/toMainmenu');
+	// });
+	// $("#toMainmenu2").on('click', function(e) {
+	// 	e.preventDefault();
+	// 	window.location.replace('/category/toMainmenu');
+	// });
+	// $("#toPersonal").on('click', function(e) {
+	// 	e.preventDefault();
+	// 	let userId = $(this).find("input").val().replace(/,/g, emptyString);
+	// 	// let authChkFlag = $("#authChkFlgContainer").val();
+	// 	let url = '/students/toEdition?editId=' + userId;
+	// 	checkPermissionAndTransfer(url);
+	// });
+	// $("#toMessage").on('click', function(e) {
+	// 	e.preventDefault();
+	// 	layer.msg(delayApology);
+	// });
+	// $("#toBookSearch").on('click', function(e) {
+	// 	e.preventDefault();
+	// 	layer.msg(delayApology);
+	// 	// let url = '/books/toPages?pageNum=1';
+	// 	// checkPermissionAndTransfer(url);
+	// });
+	// $("#toTemporary").on('click', function(e) {
+	// 	let url = '/books/toAddition';
+	// 	checkPermissionAndTransfer(url);
+	// });
+	// $("#toCollection").on('click', function(e) {
+	// 	e.preventDefault();
+	// 	let url = '/hymns/toPages?pageNum=1';
+	// 	checkPermissionAndTransfer(url);
+	// });
+	// $("#toRandomFive").on('click', function(e) {
+	// 	e.preventDefault();
+	// 	let url = '/hymns/toRandomFive';
+	// 	checkPermissionAndTransfer(url);
+	// });
 });
 function checkPermissionAndTransfer(stringUrl) {
 	let ajaxResponse = $.ajax({
@@ -139,10 +139,10 @@ function buildPageNavi(result) {
 		firstPageLi.addClass("disabled");
 		previousPageLi.addClass("disabled");
 	} else {
-		firstPageLi.click(function() {
+		firstPageLi.click(function () {
 			toSelectedPg(1, keyword);
 		});
-		previousPageLi.click(function() {
+		previousPageLi.click(function () {
 			toSelectedPg(pageNum - 1, keyword);
 		});
 	}
@@ -155,10 +155,10 @@ function buildPageNavi(result) {
 		lastPageLi.addClass("disabled");
 	} else {
 		lastPageLi.addClass("success");
-		nextPageLi.click(function() {
+		nextPageLi.click(function () {
 			toSelectedPg(pageNum + 1, keyword);
 		});
-		lastPageLi.click(function() {
+		lastPageLi.click(function () {
 			toSelectedPg(totalPages, keyword);
 		});
 	}
@@ -169,7 +169,7 @@ function buildPageNavi(result) {
 		if (pageNum === item) {
 			numsLi.attr("href", "#").addClass("active");
 		}
-		numsLi.click(function() {
+		numsLi.click(function () {
 			toSelectedPg(item, keyword);
 		});
 		ul.append(numsLi);
@@ -209,7 +209,7 @@ function projectAjaxModify(url, type, data, successFunction) {
 		dataType: 'json',
 		contentType: 'application/json;charset=UTF-8',
 		success: successFunction,
-		error: function(xhr) {
+		error: function (xhr) {
 			let message = xhr.responseText.replace(/^"|"$/g, emptyString);
 			layer.msg(message);
 		}
@@ -261,7 +261,7 @@ function normalDeletebtnFunction(url, message, deleteId) {
 	$.ajax({
 		url: url + 'deletionCheck',
 		type: 'GET',
-		success: function() {
+		success: function () {
 			swal.fire({
 				title: 'メッセージ',
 				text: message,
@@ -277,7 +277,7 @@ function normalDeletebtnFunction(url, message, deleteId) {
 				}
 			});
 		},
-		error: function(response) {
+		error: function (response) {
 			layer.msg(response.responseJSON.message);
 		}
 	});
