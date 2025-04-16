@@ -1,0 +1,50 @@
+.glass-effect {
+    background-color: rgba(255, 250, 240, 0.3);
+    /* 半透明乳白色背景 */
+    backdrop-filter: blur(16px);
+    /* 毛玻璃模糊效果 */
+    -webkit-backdrop-filter: blur(16px);
+    /* 兼容 Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* 可选：增加一点边框强调效果 */
+    color: #353542;
+}
+
+/* 确保文字不受影响 */
+.glass-effect h3,
+.glass-effect a,
+.glass-effect nav {
+    color: inherit;
+    /* 保持文字的原有颜色 */
+    position: relative;
+    /* 避免被背景混合效果影响 */
+}
+
+/* 默认隐藏 */
+.back-to-top {
+    position: fixed;         /* 固定在页面上 */
+    bottom: 20px;            /* 距离底部 */
+    right: 20px;             /* 距离右侧 */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;      /* 圆形按钮 */
+    background-color: #002fa7; /* 按钮颜色 */
+    color: white;            /* 文字颜色 */
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;           /* 确保按钮在最前方 */
+    font-size: 20px;
+    opacity: 0;
+    visibility: hidden;     /* 初始隐藏 */
+    transition: opacity 330ms, visibility 330ms;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: #0051d4; /* 鼠标悬停颜色 */
+}

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="_csrf_header" content="${_csrf.headerName}">
+    <meta name="_csrf_token" content="${_csrf.token}">
+    <title>新宿純福音教会｜日本</title>
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/customize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico">
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        .effect-shine:hover {
+            mask-image: linear-gradient(-75deg, rgba(0, 0, 0, 0.6) 30%, #000 50%, rgba(0, 0, 0, 0.6) 70%);
+            mask-size: 175%;
+            animation: shine 3300ms infinite;
+        }
+
+        @keyframes shine {
+            from {
+                mask-position: 150%;
+            }
+
+            to {
+                mask-position: -50%;
+            }
+        }
+
+        #worshipTimeIcon:hover h5,
+        #worshipTimeIcon:hover h6 {
+            color: #7f0020;
+        }
+
+        #schoolIcon:hover h5,
+        #schoolIcon:hover h6 {
+            color: #006400;
+        }
+
+        #multilingualismIcon:hover h5,
+        #multilingualismIcon:hover h6 {
+            color: #002fa7;
+        }
+    </style>
+    <script type="text/javascript" src="/static/jquery/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/static/layer/layer.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid fixed-top glass-effect">
+        <header class="border-bottom lh-lg py-5">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <a class="blog-header-logo text-body-emphasis effect-shine" href="#" id="mainIcon">
+                        <h3 style="font-size: 6.5vh;">新宿純福音教会</h3>
+                        <h3>Shinjuku Full Gospel Church</h3>
+                    </a>
+                </div>
+                <div class="col-lg-2 d-flex justify-content-end align-items-center">
+                    <a class="btn btn-outline-secondary" href="/toLogin" id="signUpBtn">ログイン</a>
+                </div>
+            </div>
+        </header>
+        <div class="nav-scroller border-bottom">
+            <nav class="nav nav-underline justify-content-evenly col-lg-10 offset-lg-1">
+                <a class="nav-item nav-link link-body-emphasis" href="#" id="homeBtn">ホーム</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#" id="worshipTimeBtn">礼拝時間</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#" id="schoolBtn">教会学校&才能教室</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#" id="introductionBtn">教会案内</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#" id="rekishiBtn">本教会</a>
+            </nav>
+        </div>
+    </div>
+    <main class="container-fluid" id="homePage">
+        <div class="col-lg-12 d-flex">
+            <img alt="img01" src="/static/images/contact/homepage1.webp" style="height: 70dvh;width: 100%;">
+        </div>
+        <div class="row col-lg-10 offset-lg-1 d-flex justify-content-evenly" style="height: 25dvh;margin-top: 5dvh;">
+            <div class="col text-center" id="schoolIcon" role="button" style="height: 100%;">
+                <img src="/static/images/icons/castilia.svg" style="height: 100%; width: 100%;" class="rounded"
+                    alt="img03">
+                <h5>教会学校&才能教室</h5>
+                <h6>CHURCH SCHOOL</h6>
+            </div>
+            <div class="col text-center" id="worshipTimeIcon" role="button" style="height: 100%;">
+                <img src="/static/images/icons/aragon.svg" style="height: 100%; width: 100%;" class="rounded"
+                    alt="img02">
+                <h5>礼拝時間</h5>
+                <h6>SERVICE</h6>
+            </div>
+            <div class="col text-center" id="multilingualismIcon" role="button" style="height: 100%;">
+                <img src="/static/images/icons/bourbon.svg" style="height: 100%; width: 100%;" class="rounded"
+                    alt="img04">
+                <h5>多言語対応</h5>
+                <h6>MULTILINGUAL</h6>
+            </div>
+        </div>
+    </main>
+    <main class="container-fluid" id="worshipTimePage">
+    </main>
+    <main class="container-fluid" id="schoolPage">
+    </main>
+    <main class="container-fluid" id="introductionPage">
+    </main>
+    <main class="container-fluid" id="rekishiPage">
+    </main>
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" class="back-to-top" aria-label="回到页面顶部">⬆</button>
+    <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+        <h4>新宿純福音教会</h4>
+        <h6>SHINJUKU FULL GOSPEL CHURCH</h6>
+        <h5>Assemblies of God</h5>
+        <div class="row col-lg-12 d-flex justify-content-evenly">
+            <div class="col text-center">
+                <p class="mb-0">
+                    <a href="/offlineToroku">Offline Register</a>
+                </p>
+            </div>
+            <div class="col text-center">
+                <p class="mb-0">
+                    <a href="#" id="backToTopIcon">Back to top</a>
+                </p>
+            </div>
+            <div class="col text-center">
+                <p class="mb-0">
+                    <a href="#">Send feedback</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="/static/customizes/index.js"></script>
+</body>
+
+</html>
