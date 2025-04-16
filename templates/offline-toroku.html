@@ -16,6 +16,7 @@
   <script type="text/javascript" src="/static/jquery/jquery-3.7.1.min.js"></script>
   <script type="text/javascript" src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="/static/layer/layer.js"></script>
+  <script type="text/javascript" src="/static/customizes/commons.js"></script>
 </head>
 
 <body>
@@ -32,32 +33,39 @@
       <div class="col-md-3">
         <label for="inputName4" class="form-label">名前</label>
         <input type="text" class="form-control" id="inputName4" placeholder="日本語名">
+        <span style="font-size: .66em;"></span>
       </div>
       <div class="col-md-7">
         <label for="inputEmail4" class="form-label">メール</label>
         <input type="email" class="form-control" id="inputEmail4" placeholder="メールアドレス">
+        <span style="font-size: .66em;"></span>
       </div>
       <div class="col-5">
         <label for="inputBirthday" class="form-label">生年月日</label>
         <input type="date" class="form-control" id="inputBirthday">
+        <span style="font-size: .66em;"></span>
       </div>
       <div class="col-9">
         <label for="inputPassword4" class="form-label">パスワード</label>
         <input type="password" class="form-control" id="inputPassword4" placeholder="英数字で入力してください">
+        <span style="font-size: .66em;"></span>
       </div>
       <div class="col-9">
         <label for="inputPassword2" class="form-label">パスワード再入力</label>
         <input type="password" class="form-control" id="inputPassword2" placeholder="パスワードを再入力してください">
+        <span style="font-size: .66em;"></span>
       </div>
       <div class="col-md-6">
         <label for="inputCity" class="form-label">最寄駅</label>
         <input type="text" class="form-control" id="inputCity" placeholder="最寄駅を入力してください">
+        <span style="font-size: .66em;"></span>
       </div>
       <div class="col-12">
-        <button type="submit" class="btn btn-primary">登録</button>
+        <button type="button" class="btn btn-primary" id="torokuBtn">登録</button>
       </div>
     </form>
   </main>
+  <script type="text/javascript" src="/static/customizes/offline-toroku.js"></script>
 </body>
 
 </html>
